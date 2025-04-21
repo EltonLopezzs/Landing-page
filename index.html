@@ -4,174 +4,129 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="OnClinic - Plataforma de agendamentos inteligentes para conectar pacientes e clínicas de forma prática e eficiente." />
-  <meta name="keywords" content="agendamento de consultas, clínicas, saúde digital, OnClinic" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OnClinic - Plataforma de agendamentos inteligentes para conectar pacientes e clínicas de forma prática e eficiente." />
   <title>OnClinic - Agendamentos Inteligentes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-
+    body { font-family: 'Inter', sans-serif; }
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
-    .animate-fadeInUp {
-      animation: fadeInUp 1s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between; /* ou center, dependendo do layout */
-      padding: 0 20px;
-    }
-
-    .animate-fadeIn {
-      animation: fadeIn 1.5s ease-out;
-    }
-
-    .btn-hover {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn-hover:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+    .animate-fadeInUp { animation: fadeInUp 1s ease-out; }
   </style>
 </head>
-<body class="bg-gray-50 font-sans relative">
+<body class="bg-gray-50 relative">
 
-  <!-- Botão WhatsApp -->
-  <a href="https://wa.me/+5567981540598" target="_blank" class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg z-50 animate-bounce" aria-label="Fale conosco pelo WhatsApp">
-    <img src="icons8-whatsapp.svg" alt="WhatsApp" class="w-8 h-8" />
-  </a>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/+5567981540598" target="_blank" class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg z-50 animate-bounce" aria-label="Fale conosco pelo WhatsApp">
+  <img src="icons8-whatsapp.svg" alt="WhatsApp" class="w-8 h-8" />
+</a>
 
-  <!-- Header -->
-  <header class="flex flex-wrap items-center justify-between p-4 md:p-6 bg-white shadow-md sticky top-0 z-40">
-    <div class="flex items-center space-x-2">
-      <img src="logo_onclicknic-removebg-preview.png" alt="Logo da OnClinic" class="w-10 h-10" />
-      <span class="text-xl font-extrabold text-blue-600">OnClinic</span>
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-4 bg-white shadow-md sticky top-0 z-40">
+  <div class="flex items-center space-x-2">
+    <img src="logo_onclicknic-removebg-preview.png" alt="Logo OnClinic" class="h-8 w-8">
+    <span class="text-xl font-bold text-blue-600">OnClinic</span>
+  </div>
+  <div class="hidden md:flex items-center space-x-6">
+    <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium">Home</a>
+    <a href="#funcionalidades" class="text-gray-600 hover:text-blue-600 font-medium">Funcionalidades</a>
+    <a href="#dashboard" class="text-gray-600 hover:text-blue-600 font-medium">Dashboard</a>
+    <a href="https://wa.me/+5567981540598"  class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full font-semibold">Fale Conosco</a>
+  </div>
+  <div class="md:hidden flex items-center">
+    <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden flex flex-col bg-white shadow-md absolute top-16 left-0 right-0 p-4 space-y-4 z-30">
+  <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium">Home</a>
+  <a href="#funcionalidades" class="text-gray-600 hover:text-blue-600 font-medium">Funcionalidades</a>
+  <a href="#dashboard" class="text-gray-600 hover:text-blue-600 font-medium">Dashboard</a>
+  <a href="https://wa.me/+5567981540598"  class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-center font-semibold">Fale Conosco</a>
+</div>
+
+<!-- Hero Section -->
+<section id="home" class="relative flex flex-col-reverse lg:flex-row items-center justify-between px-4 sm:px-6 md:px-20 py-12 sm:py-16 md:py-20 bg-gradient-to-r from-violet-200 via-white to-blue-100 overflow-hidden">
+  <div class="z-10 w-full lg:max-w-xl animate-fadeInUp text-center lg:text-left">
+    <h2 class="text-gray-700 text-sm sm:text-base md:text-lg">📲 OnClinic – Agendamentos Inteligentes</h2>
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mt-4">Conectando Pacientes e Clínicas</h1>
+    <p class="text-gray-500 mt-4 sm:mt-5 md:mt-6 text-sm sm:text-base md:text-base">
+      Agende com inteligência, cuide com facilidade! Encontre clínicas, veja perfis, agende e muito mais.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center lg:justify-start mt-6 md:mt-8 gap-4">
+      <a href="https://wa.me/+5567981540598"  class="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 transition text-white font-semibold px-6 py-3 rounded-full shadow-md text-sm sm:text-base">
+        Saiba Mais
+      </a>
     </div>
-    <nav class="flex flex-wrap items-center gap-4 mt-2 md:mt-0">
-      <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium text-sm md:text-base">Home</a>
-      <a href="#funcionalidades" class="text-gray-600 hover:text-blue-600 font-medium text-sm md:text-base">Funcionalidades</a>
-      <a href="#dashboard" class="text-gray-600 hover:text-blue-600 font-medium text-sm md:text-base">Dashboard</a>
-    </nav>
-  </header>
+  </div>
 
-  <!-- Hero -->
-  <section id="home" class="relative flex flex-col lg:flex-row items-center justify-between px-4 md:px-20 py-16 md:py-20 bg-gradient-to-r from-violet-200 via-white to-blue-100 overflow-hidden">
-    <div class="z-10 max-w-xl animate-fadeInUp text-center lg:text-left">
-      <h2 class="text-gray-700 text-base md:text-lg">📲 OnClinic – Agendamentos Inteligentes para Clínicas</h2>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mt-4">Conectando Pacientes e Clínicas de Forma Rápida e Digital</h1>
-      <p class="text-gray-500 mt-4 md:mt-6 text-sm md:text-base">OnClinic: Agende com Inteligência, Cuide com Facilidade! Nosso aplicativo conecta pacientes e clínicas de forma prática e eficiente.</p>
-      <div class="flex flex-col sm:flex-row justify-center lg:justify-start mt-6 md:mt-8 gap-4">
-        <button class="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 transition text-white font-semibold px-8 py-3 rounded-full shadow-md text-sm md:text-base">
-          Saiba Mais
-        </button>
-        <button class="border border-blue-500 text-blue-500 hover:bg-blue-50 transition font-semibold px-8 py-3 rounded-full shadow text-sm md:text-base">
-          Contato
-        </button>
-      </div>
-    </div>
+  <div class="hidden lg:block absolute right-5 bottom-0 z-0">
+    <img src="mulher_feliz_sf.png" alt="Mulher realizando agendamento" class="h-[250px] sm:h-[300px] md:h-[400px] object-contain">
+  </div>
+</section>
 
-    <!-- Imagem Responsiva -->
-    <div class="hidden lg:block lg:absolute right-10 bottom-0 z-0">
-      <img src="mulher_feliz_sf.png" alt="Mulher realizando agendamento" class="h-64 md:h-[500px] object-contain" />
-    </div>
-  </section>
+<!-- Funcionalidades -->
+<section id="funcionalidades" class="px-4 sm:px-6 md:px-20 py-12 sm:py-16 md:py-20 bg-white">
+  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Funcionalidades para o Paciente</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+    <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:scale-105 transition"><div class="text-blue-600 text-5xl mb-4">🔍</div><h3 class="font-bold text-lg mb-2">Pesquisar Clínicas</h3><p class="text-gray-600">Localize clínicas por cidade, especialidade ou atendimento.</p></div>
+    <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:scale-105 transition"><div class="text-purple-600 text-5xl mb-4">🖼️</div><h3 class="font-bold text-lg mb-2">Ver Perfis Completos</h3><p class="text-gray-600">Veja fotos, serviços, avaliações, preços e convênios aceitos.</p></div>
+    <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:scale-105 transition"><div class="text-cyan-600 text-5xl mb-4">🕒</div><h3 class="font-bold text-lg mb-2">Consultar Horários</h3><p class="text-gray-600">Veja horários disponíveis em tempo real.</p></div>
+    <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:scale-105 transition"><div class="text-green-600 text-5xl mb-4">✅</div><h3 class="font-bold text-lg mb-2">Agendar Consultas</h3><p class="text-gray-600">Agende facilmente e com rapidez pelo aplicativo.</p></div>
+    <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:scale-105 transition"><div class="text-yellow-500 text-5xl mb-4">🔔</div><h3 class="font-bold text-lg mb-2">Receber Lembretes</h3><p class="text-gray-600">Seja notificado automaticamente das suas consultas.</p></div>
+    <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:scale-105 transition"><div class="text-red-500 text-5xl mb-4">💬</div><h3 class="font-bold text-lg mb-2">Chat em Tempo Real</h3><p class="text-gray-600">Converse diretamente com a clínica pelo aplicativo.</p></div>
+  </div>
+</section>
 
-  <!-- Funcionalidades -->
-  <section id="funcionalidades" class="px-4 md:px-20 py-12 md:py-16 bg-white">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Funcionalidades para o Paciente</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 text-center">
-      <!-- Cards -->
-      <div class="bg-gray-50 p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <div class="text-blue-600 text-4xl mb-4">🔍</div>
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">Pesquisar Clínicas</h3>
-        <p class="text-gray-600 text-sm md:text-base">Encontre clínicas por localização, especialidade ou tipo de atendimento.</p>
-      </div>
+<!-- Dashboard Administrativo -->
+<section id="dashboard" class="px-4 sm:px-6 md:px-20 py-12 sm:py-16 md:py-20 bg-gray-100">
+  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">🧭 Dashboard Administrativo</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+    <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition"><h3 class="font-bold text-lg mb-2">📊 Visão Geral</h3><p class="text-gray-600">Controle de agendamentos por profissional, especialidade e dia.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition"><h3 class="font-bold text-lg mb-2">⏰ Monitoramento de Presenças</h3><p class="text-gray-600">Acompanhe faltas e confirmações em tempo real.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition"><h3 class="font-bold text-lg mb-2">💰 Relatórios Financeiros</h3><p class="text-gray-600">Gere relatórios de faturamento por período e serviço.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition"><h3 class="font-bold text-lg mb-2">👩‍⚕️ Análise de Profissionais</h3><p class="text-gray-600">Veja o desempenho e avaliações dos profissionais da clínica.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition"><h3 class="font-bold text-lg mb-2">📅 Controle de Agenda</h3><p class="text-gray-600">Organize a disponibilidade de horários e especialidades.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition"><h3 class="font-bold text-lg mb-2">📝 Gerenciamento de Serviços</h3><p class="text-gray-600">Cadastre e gerencie todos os serviços prestados pela clínica.</p></div>
+  </div>
+</section>
 
-      <div class="bg-gray-50 p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <div class="text-purple-600 text-4xl mb-4">🖼️</div>
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">Ver Perfis Completos</h3>
-        <p class="text-gray-600 text-sm md:text-base">Confira fotos, serviços, avaliações, preços e convênios.</p>
-      </div>
+<!-- Rodapé -->
+<footer id="contato" class="bg-gray-800 text-center text-gray-300 text-xs py-6">
+  <p>© 2025 OnClinic. Todos os direitos reservados.</p>
+  <p class="mt-2">Contato: <a href="mailto:contato@onclinic.com" class="underline hover:text-blue-400">contato@onclinic.com</a></p>
+</footer>
 
-      <div class="bg-gray-50 p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <div class="text-cyan-600 text-4xl mb-4">🕒</div>
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">Consultar Horários</h3>
-        <p class="text-gray-600 text-sm md:text-base">Veja horários disponíveis em tempo real.</p>
-      </div>
+<!-- Scripts -->
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
 
-      <div class="bg-gray-50 p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <div class="text-green-600 text-4xl mb-4">✅</div>
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">Agendar Consultas</h3>
-        <p class="text-gray-600 text-sm md:text-base">Agende de forma simples, rápida e digital.</p>
-      </div>
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
 
-      <div class="bg-gray-50 p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <div class="text-yellow-500 text-4xl mb-4">🔔</div>
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">Receber Lembretes</h3>
-        <p class="text-gray-600 text-sm md:text-base">Notificações automáticas para suas consultas.</p>
-      </div>
-
-      <div class="bg-gray-50 p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <div class="text-red-500 text-4xl mb-4">💬</div>
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">Chat em Tempo Real</h3>
-        <p class="text-gray-600 text-sm md:text-base">Converse com a clínica diretamente pelo app.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dashboard -->
-  <section id="dashboard" class="px-4 md:px-20 py-12 md:py-16 bg-gray-100">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">🧭 Dashboard Administrativo OnClinic</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 text-center">
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">📊 Visão Geral</h3>
-        <p class="text-gray-600 text-sm md:text-base">Agendamentos por dia, profissional e especialidade.</p>
-      </div>
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">⏰ Monitoramento</h3>
-        <p class="text-gray-600 text-sm md:text-base">Controle de presenças e faltas em tempo real.</p>
-      </div>
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">💰 Relatórios Financeiros</h3>
-        <p class="text-gray-600 text-sm md:text-base">Resumo por período e tipo de serviço.</p>
-      </div>
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">👩‍⚕️ Análise de Profissionais</h3>
-        <p class="text-gray-600 text-sm md:text-base">Desempenho e avaliações detalhadas.</p>
-      </div>
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">📅 Controle de Agenda</h3>
-        <p class="text-gray-600 text-sm md:text-base">Horários e especialidades organizados.</p>
-      </div>
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover:scale-105 transform transition">
-        <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-800">📝 Gerenciamento de Serviços</h3>
-        <p class="text-gray-600 text-sm md:text-base">Serviços e convênios integrados.</p>
-      </div>
-    </div>
-  </section>
+  document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
