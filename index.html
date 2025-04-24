@@ -30,18 +30,19 @@
 <a href="https://wa.me/+5567981540598" target="_blank" class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg z-50 animate-bounce" aria-label="Fale conosco pelo WhatsApp">
   <img src="icons8-whatsapp.svg" alt="WhatsApp" class="w-8 h-8" />
 </a>
-
 <!-- Header -->
 <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md sticky top-0 z-40">
   <div class="flex items-center space-x-2">
     <img src="logo_onclicknic-removebg-preview.png" alt="Logo OnClinic" class="h-8 w-8">
     <span class="text-xl font-bold text-blue-600">OnClinic</span>
   </div>
+
   <div class="hidden md:flex items-center space-x-6">
     <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium">Home</a>
     <a href="#funcionalidades" class="text-gray-600 hover:text-blue-600 font-medium">Funcionalidades</a>
     <a href="#dashboard" class="text-gray-600 hover:text-blue-600 font-medium">Dashboard</a>
-    <a href="https://wa.me/+5567981540598"  class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full font-semibold">Fale Conosco</a>
+    <a href="#planos" class="text-gray-600 hover:text-blue-600 font-medium">Planos</a>
+    <a href="https://wa.me/+5567981540598" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full font-semibold">Fale Conosco</a>
   </div>
   <div class="md:hidden flex items-center">
     <button id="menu-toggle" class="text-blue-600 focus:outline-none">
@@ -103,6 +104,68 @@
     <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition"><h3 class="font-bold text-lg mb-2">👩‍⚕️ Análise de Profissionais</h3><p class="text-gray-600">Veja o desempenho e avaliações dos profissionais da clínica.</p></div>
     <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition"><h3 class="font-bold text-lg mb-2">📅 Controle de Agenda</h3><p class="text-gray-600">Organize a disponibilidade de horários e especialidades.</p></div>
     <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition"><h3 class="font-bold text-lg mb-2">📝 Gerenciamento de Serviços</h3><p class="text-gray-600">Cadastre e gerencie todos os serviços prestados pela clínica.</p></div>
+  </div>
+</section>
+
+<!-- Seção de Planos -->
+<section id="planos" class="px-4 sm:px-6 md:px-20 py-16 bg-white">
+  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Planos OnClinic</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+    <!-- OnClinic Start -->
+    <div class="bg-gradient-to-br from-violet-700 via-white to-blue-100 text-gray-800 p-6 rounded-xl shadow-lg text-center hover:scale-[1.02] transition">
+      <h3 class="text-lg font-semibold mb-1">OnClinic Start</h3>
+      <p class="text-xs mb-3 italic">Parceria gratuita para clínicas selecionadas</p>
+      <div class="text-3xl font-bold mb-2">R$0</div>
+      <p class="text-[11px] mb-4 italic">🚀 100 vagas exclusivas</p>
+      <ul class="space-y-1 text-sm">
+        <li>✔️ Dashboard completo</li>
+        <li>✔️ Bot de Agendamento</li>
+        <li>✔️ Perfil no app OnClinic</li>
+      </ul>
+      <a href="https://wa.link/8z8bl3" class="inline-block mt-5 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition">Quero ser parceiro</a>
+    </div>
+
+    <!-- OnClinic Full -->
+    <div class="bg-gradient-to-br from-violet-200 via-white to-blue-100 text-gray-800 p-6 rounded-xl shadow-lg text-center hover:scale-[1.02] transition">
+      <h3 class="text-lg font-semibold mb-1">OnClinic Full</h3>
+      <p class="text-xs mb-3 italic">Todos os recursos premium da plataforma</p>
+      <div class="text-3xl font-bold text-blue-600 mb-4">R$199</div>
+      <ul class="space-y-1 text-sm">
+        <li>✔️ Dashboard completo</li>
+        <li>✔️ Bot de Agendamento</li>
+        <li>✔️ Perfil no App</li>
+        <li>✔️ Suporte Premium</li>
+      </ul>
+      <!-- <a href="#contato" class="inline-block mt-5 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition">Assinar agora</a> -->
+    </div>
+
+    <!-- OnClinic ProApp -->
+    <div class="bg-gradient-to-br from-violet-200 via-white to-blue-100 text-gray-800 p-6 rounded-xl shadow-lg text-center hover:scale-[1.02] transition">
+      <h3 class="text-lg font-semibold mb-1">OnClinic ProApp</h3>
+      <p class="text-xs mb-3 italic">Dashboard + Perfil no app</p>
+      <div class="text-3xl font-bold text-gray-800 mb-4">R$129</div>
+      <ul class="space-y-1 text-sm">
+        <li>✔️ Dashboard</li>
+        <li>✔️ Perfil no App</li>
+        <li>❌ Bot de Agendamento</li>
+      </ul>
+      <!-- <a href="#contato" class="inline-block mt-5 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition">Contratar</a> -->
+    </div>
+
+    <!-- OnClinic Bot -->
+    <div class="bg-gradient-to-br from-violet-200 via-white to-blue-100 text-gray-800 p-6 rounded-xl shadow-lg text-center hover:scale-[1.02] transition">
+      <h3 class="text-lg font-semibold mb-1">OnClinic Bot</h3>
+      <p class="text-xs mb-3 italic">Automatize agendamentos no WhatsApp</p>
+      <div class="text-3xl font-bold text-gray-800 mb-4">R$79,90</div>
+      <ul class="space-y-1 text-sm">
+        <li>✔️ Bot de Agendamento</li>
+        <li>❌ Dashboard</li>
+        <li>❌ Perfil no App</li>
+      </ul>
+      <!-- <a href="#contato" class="inline-block mt-5 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition">Contratar</a> -->
+    </div>
+
   </div>
 </section>
 
